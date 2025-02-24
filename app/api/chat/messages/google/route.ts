@@ -43,7 +43,7 @@ export async function POST(req: Request) {
     const {
         messages,
         config,
-        stream, // This variable is currently unused
+        // stream, // This variable is currently unused
     }: {
         messages: any[];
         config: ApiConfig;

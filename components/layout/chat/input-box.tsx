@@ -145,18 +145,15 @@ export const InputBox = ({
             interface SpeechRecognitionResult {
                 transcript: string;
                 confidence: number;
+                [index: number]: { transcript: string; confidence: number; };
             }
 
             interface SpeechRecognitionEvent extends Event {
-                results: {
-                    [index: number]: {
-                        [index: number]: SpeechRecognitionResult;
-                    };
-                };
+                results: SpeechRecognitionResult[];
             }
 
             recognitionInstance.onresult = (event: SpeechRecognitionEvent) => {
-                const results = Array.from(event.results as ArrayLike<SpeechRecognitionResult>);
+                const results = Array.from(event.results as unknown as ArrayLike<SpeechRecognitionResult>);
                 const transcript = results
                     .map(result => result[0])
                     .map((result: SpeechRecognitionResult) => result.transcript)
