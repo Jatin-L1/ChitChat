@@ -7,7 +7,7 @@ export default function AuthWrapper({ children }: { children: React.ReactNode })
     const router = useRouter();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
-
+    // Add router as a dependency to useEffect
     useEffect(() => {
         const token = localStorage.getItem("token"); // Get token from localStorage
         if (token) {

@@ -156,7 +156,7 @@ export const InputBox = ({
             }
 
             recognitionInstance.onresult = (event: SpeechRecognitionEvent) => {
-                const results = Array.from(event.results);
+                const results = Array.from(event.results as ArrayLike<SpeechRecognitionResult>);
                 const transcript = results
                     .map(result => result[0])
                     .map((result: SpeechRecognitionResult) => result.transcript)
