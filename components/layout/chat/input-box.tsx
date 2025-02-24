@@ -156,12 +156,12 @@ export const InputBox = ({
             }
 
             recognitionInstance.onresult = (event: SpeechRecognitionEvent) => {
-                const transcript = Array.from(event.results as unknown as ArrayLike<SpeechRecognitionResult[]>)
+                const results = Array.from(event.results);
+                const transcript = results
                     .map(result => result[0])
-                    .map(result => result.transcript)
+                    .map((result: SpeechRecognitionResult) => result.transcript)
                     .join('');
                 
-                // Create a synthetic event to update the textarea
                 const syntheticEvent = {
                     target: { value: transcript }
                 } as React.ChangeEvent<HTMLTextAreaElement>;

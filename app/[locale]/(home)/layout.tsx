@@ -9,7 +9,7 @@ export default async function AppLayout({
     return (
         <HomeProvider>
             <AppSidebar />
-            <main className='m-2 flex h-screen flex-1 flex-col rounded-lg bg-white/70 p-1 shadow dark:bg-neutral-600/30 dark:text-neutral-200/70 md:m-3'>{children}</main>
+            <main className='m-2 flex h-screen flex-1 flex-col rounded-3xl bg-white/70 p-1 shadow dark:bg-neutral-600/30 dark:text-neutral-200/70 md:m-3 bg-gradient-to-b from-[rgb(201,222,244)] via-[rgb(245,204,212)] to-[rgb(184,164,201)]'>{children}</main>
         </HomeProvider>
     );
 }

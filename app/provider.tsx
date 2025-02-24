@@ -11,7 +11,7 @@ import { ThemeProvider } from '@/hooks/theme';
 export default function RootProvider({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <JotaiProvider>
-            <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+            <ThemeProvider attribute='class' defaultTheme='light' enableSystem>
                 {children}
 
                 <Toaster />
