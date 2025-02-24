@@ -100,10 +100,10 @@ import { useAtom } from 'jotai';
 import { useTranslations } from 'next-intl';
 
 type SpeechRecognition = any;
-import { useRouter } from 'next/navigation';
-import Tippy from '@tippyjs/react';
-import { FaStop, FaMicrophone, FaMicrophoneSlash } from 'react-icons/fa';
+import { FaMicrophone, FaMicrophoneSlash,FaStop } from 'react-icons/fa';
 import { FaArrowUp } from 'react-icons/fa6';
+import Tippy from '@tippyjs/react';
+import { useRouter } from 'next/navigation';
 
 import { Textarea } from '@/components/ui/textarea';
 import store from '@/hooks/store';

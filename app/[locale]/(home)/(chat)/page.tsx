@@ -167,6 +167,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useChat } from 'ai/react';
 import { useAtom } from 'jotai';
+import { Brain } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -182,7 +183,6 @@ import { Conversation } from '@/types/conversation';
 import { ProviderSetting, SpecifiedProviderSetting } from '@/types/settings';
 import { whatTimeOfDay } from '@/utils/app/time';
 import { generateUUID } from '@/utils/app/uuid';
-import { Brain } from 'lucide-react';
 
 export default function Chat() {
     const searchParams = useSearchParams();
@@ -317,11 +317,11 @@ export default function Chat() {
                     <ConversationWindow messages={messages} isLoading={isLoading} />
                 </div>
             ) : (
-                <div className='flex flex-col size-full items-center justify-center h-full'>
-                    <Brain className='text-gray-500 mb-4' strokeWidth={1.5} size={88} />
+                <div className='flex size-full h-full flex-col items-center justify-center'>
+                    <Brain className='mb-4 text-gray-500' strokeWidth={1.5} size={88} />
                     <p className='text-4xl font-semibold text-gray-500'>{t(whatTimeOfDay())}</p>
-                    <h1 className='font-bold text-6xl text-gray-600'>Can i help you with anything?</h1>
-                    <p className='text-muted-foreground py-3'>Ready to assist you with anything you need, from answering questions to providing recommendations. Let's get started!</p>
+                    <h1 className='text-6xl font-bold text-gray-600'>Can i help you with anything?</h1>
+                    <p className='py-3 text-muted-foreground'>Ready to assist you with anything you need, from answering questions to providing recommendations. Let's get started!</p>
                 </div>
             )}
             <InputBox inputRef={inputRef} loading={isLoading} input={input} handleInput={handleInputChange} handleSubmit={handleSubmitChat} handleStop={handleStop} />

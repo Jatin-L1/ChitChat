@@ -61,12 +61,12 @@
 
 
 
+import { FaUser } from 'react-icons/fa';
+import { LuClipboardCopy, LuDownload,LuLoader2 } from 'react-icons/lu';
 import { Message } from 'ai';
 import { useAtom } from 'jotai';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { FaUser } from 'react-icons/fa';
-import { LuClipboardCopy, LuLoader2, LuDownload } from 'react-icons/lu';
 import { toast } from 'sonner';
 
 import { renderMarkdownMessage } from '@/components/layout/message';
@@ -118,7 +118,7 @@ export const ConversationWindow = ({
     return (
         <div className="container mx-auto flex flex-col items-start justify-start gap-3 md:w-11/12 xl:w-10/12">
             {messages.length > 0 && (
-                <div className="w-full flex justify-end mb-2">
+                <div className="mb-2 flex w-full justify-end">
                     <button
                         onClick={onDownload}
                         className="inline-flex items-center space-x-1 rounded-md bg-neutral-200 px-3 py-2 transition duration-300 ease-in-out hover:bg-neutral-400/30 dark:bg-neutral-600 dark:text-neutral-200/90 dark:shadow-lg dark:hover:bg-neutral-700 dark:hover:shadow-xl"
